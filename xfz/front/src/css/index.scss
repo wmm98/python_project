@@ -88,8 +88,6 @@ body{
 
     .wrapper{
         //设置轮播图宽高
-        $bannerWidth: $mainBoxWidth;
-        $bannerHeight: 202px;
 
         width: $pageWidth;
         margin: 0 auto;
@@ -99,6 +97,9 @@ body{
 
 
         .news-wrapper{
+            $bannerWidth: $mainBoxWidth;
+            $bannerHeight: 202px;
+
             float: left;
             width: $mainBoxWidth;
             height: 500px;
@@ -108,10 +109,13 @@ body{
                 width: 100%;
                 height: $bannerHeight;
                 background: #0e275e;
+                position: relative;
 
                 .banner-ul{
                     overflow: hidden;
                     width: $bannerWidth*4;
+                    position: absolute;
+                    left: 0;
 
                     li{
                         float: left;
