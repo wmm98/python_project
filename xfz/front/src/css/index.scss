@@ -130,6 +130,28 @@ body{
                     }
                 }
 
+                .arrow{
+                    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                    font-size: 70px;
+                    color:white;
+                    //用绝对定位
+                    position:absolute;
+                    top: 50%;
+                    margin-top: -45px;
+                    //显示小手
+                    cursor: pointer;
+                    //默认隐藏
+                    display: none;
+                }
+
+                .left-arrow{
+                    left: 20px
+                }
+
+                .right-arrow{
+                    right: 20px;
+                }
+
 
             }
         }
