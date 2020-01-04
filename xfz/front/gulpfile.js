@@ -9,6 +9,11 @@ var cache = require('gulp-cache')
 //创建服务器
 var bs = require("browser-sync").create()
 var sass = require("gulp-sass")
+// 引用的是压缩的文件js, 出错不好指明是哪行， 用它可以明确知道出错是哪行
+var sourcemaps = require("gulp-sourcemaps")
+// gulp-util：这个插件中有一个方法log, 可以打印出当前js错误信息
+// 不会在运行的时候直接停止过执行
+var util = require("gulp-util")
 
 
 //存放所有的路径,以后修改路径的时候只需要修改一个地方
@@ -46,8 +51,10 @@ gulp.task("css", function(){
 //定义处理js文件的任务
 gulp.task("js", function(){
     gulp.src(path.js + "*.js")
-        .pipe(uglify())
+        .pipe(sourcemaps.init())
+        .pipe(uglify().on("error", util.log))
         .pipe(rename({"suffix": ".min"}))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.js_dist))
         .pipe(bs.stream())
 })
