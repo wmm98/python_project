@@ -208,7 +208,7 @@ Banner.prototype.listenPageControl = function(){
     var self = this
     self.pageControl.children("li").each(function(index, obj){
         $(obj).click(function(){
-            self.index = index
+            self.index = index + 1
             //移除没有选中的圆点状态
             $(obj).addClass("active").siblings().removeClass("active")
             self.animate()
