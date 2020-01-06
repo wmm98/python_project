@@ -1,0 +1,65 @@
+@import "init.scss";
+@import "constants.scss";
+@import "header.scss";
+@import "body.scss";
+@import "footer.scss";
+
+
+.main{
+  .wrapper{
+    .main-content-wrapper{
+      .news-wrapper{
+        padding: 20px;
+
+        .title{
+          color: $mainFontColor;
+          font-size: 24px;
+          font-weight: 400;
+        }
+
+        .news-info{
+          $newsInfoHeight: 28px;
+          overflow: hidden;
+          margin-top: 20px;
+          color: $assistFontColor;
+          font-size: 14px;
+          line-height: $newsInfoHeight;
+          .info-group{
+            float: left;
+            .pub-time{
+              margin-left: 20px;
+            }
+            .category{
+              margin-left: 20px;
+              background: $themeColor;
+              color: #fff;
+              padding: 0 5px;
+              border-radius: 2px;
+            }
+          }
+          .share-group{
+            float: right;
+            overflow: hidden;
+            span{
+              float: left;
+            }
+            .share-item{
+              background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
+              background-size: 240%;
+              width: 28px;
+              height: 28px;
+              float: left;
+            }
+            .weixin{
+              margin-right: 10px;
+            }
+            .weibo{
+              background-position: -39px 0;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

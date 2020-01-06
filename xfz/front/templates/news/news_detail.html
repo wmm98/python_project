@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>小饭桌</title>
-    <link rel="stylesheet" href="../../dist/css/index.min.css">
-    <script src="../../dist/js/jquery-3.1.1.min.js"></script>
-    <script src="../../dist/js/index.min.js"></script>
+    <title>新闻详情页面</title>
+    <link rel="stylesheet" href="../../dist/css/news_detail.min.css">
+    <link rel="stylesheet" href="../../dist/css/footer.min.css">
 </head>
 <body>
     <header class="header">
@@ -30,93 +29,28 @@
         </div>
     </header>
 
+    <!--内容部分-->
     <div class="main">
         <div class="wrapper">
             <div class="main-content-wrapper">
-                <!--轮播图-->
-                <div class="banner-group" id="banner-group">
-                    <ul class="banner-ul" id="banner-ul">
-                        <li><a href="#"><img src="https://static-image.xfz.cn/1571105333_385.jpg"></a></li>
-                        <li><a href="#"><img src="https://static-image.xfz.cn/1570765909_110.png"></a></li>
-                        <li><a href="#"><img src="https://static-image.xfz.cn/1571292192_9.jpg"></a></li>
-                        <li><a href="#"><img src="https://static-image.xfz.cn/1571191958_695.png"></a></li>
-                        <li><a href="#"><img src="https://static-image.xfz.cn/1571885973_544.jpg"></a></li>
-                    </ul>
-                    <!--尖括号 左右箭头-->
-                    <span class="arrow left-arrow">‹</span>
-                    <span class="arrow right-arrow">›</span>
-                    <!--小圆点-->
-                    <div class="page-control-group">
-                        <ul class="page-control">
-                            <!--js会动态生成小点点-->
-                            <!--<li class="active"></li>-->
-                            <!--<li></li>-->
-                            <!--<li></li>-->
-                            <!--<li></li>-->
-                        </ul>
+                <div class="news-wrapper">
+                    <h1 class="title">
+                        【早报】：OYO被曝房源造假；理想汽车秘密申请美国IPO；滴滴出行暂停新司机注册审核7天
+                    </h1>
+                    <div class="news-info">
+                        <div class="info-group">
+                            <span class="author">福禄娃</span>
+                            <span class="pub-time">12月11号</span>
+                            <span class="category">热点</span>
+                        </div>
+                        <div class="share-group">
+                            <span>分享至：</span>
+                            <a class="weixin share-item"></a>
+                            <a href="#" class="weibo share-item"></a>
+                        </div>
                     </div>
                 </div>
-                <div class="list-outer-group">
-                    <ul class="list-tab">
-                        <li class="active"><a href="#">最新资讯</a></li>
-                        <li><a href="#">热点</a></li>
-                        <li><a href="#">深度报道</a></li>
-                        <li><a href="#">干货分享</a></li>
-                        <li><a href="#">投资人说</a></li>
-                    </ul>
-                    <ul class="list-inner-group">
-                        <li>
-                            <div class="thumbnail-group">
-                                <a href="#">
-                                    <img src="https://static-image.xfz.cn/1578101299_163.jpg-website.news.list" alt="">
-                                </a>
-                            </div>
-                            <div class="news-group">
-                                <p class="title">
-                                    <a href="#"> 早报：OYO被曝房源造假；理想汽车秘密申请美国IPO；滴滴出行暂停新司机注册审核7天</a>
-                                </p>
-                                <p class="desc">
-                                    滴滴顺风车1月6日上线杭州、上海等8个城市试运营
-                                </p>
-                                <p class="more">
-                                    <span class="category">深度报道</span>
-                                    <span class="pub-time">1小时前</span>
-                                    <span class="author">知了课堂</span>
-                                </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="thumbnail-group">
-                                <a href="#">
-                                <img src="https://static-image.xfz.cn/1577945078_284.png-website.news.list" alt="">
-                                </a>
-                                </div>
-                                <div class="news-group">
-                                <p class="title">
-                                <a href="#"> 打造开店人“小红书”， 店鹿获450万天使融资</a>
-                                </p>
-                                <p class="desc">
-                                投资方为亮马资本
-                                </p>
-                                <p class="more">
-                                <span class="category">热点</span>
-                                <span class="pub-time">2小时前</span>
-                                <span class="author">知了课堂</span>
-                                </p>
-                            </div>
-                        </li>
-
-
-
-                    </ul>
-                    <div class="load-more-group">
-                        <button class="load-more">查看更多</button>
-                    </div>
-                </div>
-
             </div>
-
             <div class="sidebar-wrapper">
                 <div class="title-group">
                     <span class="title">在线课堂</span>
@@ -155,7 +89,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class="hot-news-group">
                     <div class="title-group">
                         <span class="title">热门推荐</span>
