@@ -5,31 +5,33 @@
 @import "footer.scss";
 
 
-.main{
-  .wrapper{
-    .main-content-wrapper{
-      .news-wrapper{
-        padding: 20px;
+.main {
+  .wrapper {
+    .main-content-wrapper {
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      .news-wrapper {
 
-        .title{
+        .title {
           color: $mainFontColor;
           font-size: 24px;
           font-weight: 400;
         }
 
-        .news-info{
+        .news-info {
           $newsInfoHeight: 28px;
           overflow: hidden;
           margin-top: 20px;
           color: $assistFontColor;
           font-size: 14px;
           line-height: $newsInfoHeight;
-          .info-group{
+          .info-group {
             float: left;
-            .pub-time{
+            .pub-time {
               margin-left: 20px;
             }
-            .category{
+            .category {
               margin-left: 20px;
               background: $themeColor;
               color: #fff;
@@ -37,29 +39,108 @@
               border-radius: 2px;
             }
           }
-          .share-group{
+          .share-group {
             float: right;
             overflow: hidden;
-            span{
+            span {
               float: left;
             }
-            .share-item{
+            .share-item {
               background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
               background-size: 240%;
               width: 28px;
               height: 28px;
               float: left;
             }
-            .weixin{
+            .weixin {
               margin-right: 10px;
             }
-            .weibo{
+            .weibo {
               background-position: -39px 0;
             }
           }
         }
+        .article {
+          margin-top: 20px;
+          img {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
       }
 
+      .comment-wrapper {
+        border-top: 1px solid $lineColor;
+        padding-top: 20px;
+        .title {
+          color: $mainFontColor;
+          font-size: 18px;
+          font-weight: 400;
+        }
+        .comment-textarea {
+          margin-top: 10px;
+          width: 100%;
+          resize: none;
+          outline: none;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 14px;
+          padding: 6px 10px;
+          box-sizing: border-box;
+        }
+        .nologined-textarea {
+          height: 40px;
+          line-height: 26px;
+          overflow: hidden;
+        }
+        .logined-textarea {
+          height: 80px;
+        }
+        .submit-btn-group {
+          text-align: right;
+          margin-top: 14px;
+          .submit-btn {
+            background: $themeColor;
+            border: none;
+            padding: 6px 10px;
+            color: #fff;
+            border-radius: 5px;
+          }
+        }
+
+        .comment-list {
+          margin-top: 20px;
+          li {
+            margin-top: 20px;
+            border-bottom: 1px solid $lineColor;
+            padding-bottom: 20px;
+            .comment-info {
+              overflow: hidden;
+              height: 40px;
+              line-height: 40px;
+              color: $assistFontColor;
+              font-size: 16px;
+              .avatar {
+                float: left;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+              }
+              .author{
+                float: left;
+                margin-left: 20px;
+              }
+              .pub-time {
+                float: right;
+              }
+            }
+            .comment-content{
+              margin-left: 60px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }
