@@ -20,7 +20,7 @@ var util = require("gulp-util")
 var path = {
     // **表示中间有任意多个目录
     'html': './templates/**/',
-    'css': './src/css/',
+    'css': './src/css/**/',
     'js': './src/js/',
     'images': './src/images/',
     'css_dist': './dist/css/',
