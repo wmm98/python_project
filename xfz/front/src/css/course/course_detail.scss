@@ -1,0 +1,81 @@
+@import "../common/init";
+@import "../common/constants";
+@import "../common/header";
+@import "../common/body";
+@import "../common/footer";
+@import "course_nav";
+
+
+.main{
+  .wrapper{
+    margin-top: 20px;
+    .course-wrapper{
+      background: #fff;
+      .course-info{
+        $newsInfoHeight: 28px;
+        padding: 20px;
+        .course-title{
+          color: $mainFontColor;
+          font-size: 20px;
+        }
+        .price-group{
+          margin-top: 20px;
+          overflow: hidden;
+          .share-group{
+            overflow: hidden;
+            span{
+              float: left;
+            }
+            .title{
+              color: $assistFontColor;
+              font-size: 14px;
+              line-height:  $newsInfoHeight;
+            }
+            .share-item {
+              background: url("https://www.xfz.cn/static/build/images/share.png") no-repeat;
+              background-size: 240%;
+              width: 28px;
+              height: 28px;
+              float: left;
+            }
+            .weixin {
+              margin-right: 10px;
+            }
+            .weibo {
+              background-position: -39px 0;
+            }
+          }
+          .buy-group{
+            float: right;
+            .price{
+              font-size: 16px;
+            }
+            .free{
+              color:$freeColor;
+            }
+            .pay{
+              color: $payColor;
+            }
+            .buy-btn{
+              color: #fff;
+              background: #ff8d3f;
+              height: 40px;
+              width: 120px;
+              display: inline-block;
+              text-align: center;
+              line-height: 40px;
+              border-radius: 5px;
+              margin-left: 20px;
+            }
+          }
+        }
+
+      }
+      .video-group{
+        width: 100%;
+        height: 600px;
+        background: ghostwhite;
+      }
+    }
+  }
+}
