@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views
 
-app_name = "cms"
+app_name = "payinfo"
 
 urlpatterns = [
-    path('login/', views.login_view, name="login")
+    path('', views.payinfo, name="payinfo"),
 ]

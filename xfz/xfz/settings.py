@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.cms',
     'apps.news',
+    'apps.xfzauth',
+    'apps.course',
+    'apps.payinfo',
 ]
 
 MIDDLEWARE = [
@@ -108,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "xfzauth.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
