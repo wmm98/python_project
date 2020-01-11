@@ -86,4 +86,7 @@ gulp.task("bs", function(){
 })
 
 //创建一个默认任务
-gulp.task("default", ["bs", "watch"])
+// gulp.task("default", ["bs", "watch"])
+
+//只进行监听任务，并不会打开浏览器刷新
+gulp.task("default", ["watch"])

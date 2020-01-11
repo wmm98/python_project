@@ -1,225 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>新闻详情页面</title>
-    <link rel="stylesheet" href="{% static 'news/news_detail.min.css' %}">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
+{% extends 'base/front_base.html' %}
 
-            <div class="logo-box">
-                <a href="/"></a>
+{% block title %}新闻详情页面{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/news/news_detail.min.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="main">
+    <div class="wrapper">
+        <div class="main-content-wrapper">
+            <div class="news-wrapper">
+                <h1 class="title">
+                    【早报】：OYO被曝房源造假；理想汽车秘密申请美国IPO；滴滴出行暂停新司机注册审核7天
+                </h1>
+                <div class="news-info">
+                    <div class="info-group">
+                        <span class="author">福禄娃</span>
+                        <span class="pub-time">12月11号</span>
+                        <span class="category">热点</span>
+                    </div>
+                    <div class="share-group">
+                        <span>分享至：</span>
+                        <a class="weixin share-item"></a>
+                        <a href="#" class="weibo share-item"></a>
+                    </div>
+                </div>
+                <article class="article">
+                    <img src="https://static-image.xfz.cn/1578101200_843.png" alt="">
+                    小桔车服与小鹏汽车合作，面向个人用户提供长租服务
+                    小桔车服与小鹏汽车达成合作，双方将协同彼此在产品、市场、品牌、数据等方面的优势，在网约车、社会车辆长租、充电及维护保养等汽车产业链业务开展全面合作。通过合作，双方将共同探索小鹏汽车通过小桔租车平台，向个人用户提供长租服务这种新型用车方式。
+
+                    携程计划回港二次上市，已接触多家中资及外资投行
+                    携程计划回港二次上市，并于最近陆续接触了多家中资及外资投行。但是截至发稿，携程暂未正式挑选投行。在阿里巴巴当时的上市仪式上，港交所行政总裁李小加表示，既然阿里巴巴都能够回港二次上市，没有理由不相信其他中概股公司都会陆续回港。携程为在线旅游服务公司，于2003年12月在美国纳斯达克上市。连续1月2日，携程收盘价为36.97美元，市值为217.54亿美元。
+
+                    工信部回应4G网速变慢：近期全国4G网速整体保持稳定
+                    针对网友有关“4G网速变慢”的提问，工信部3日通过中国政府网回应称，总体来看，近期全国4G网速整体保持稳定，但可能存在个别区域、某些时段下降的情况。主要原因是4G用户流量增长和网络支撑能力提升还不完全匹配。后续，将进一步加强对基础电信企业监管和指导，做好网络建设和优化，保障服务质量。
+
+                    闲鱼回应“邀韩寒出任玩家CEO”：确有此事
+                    近日，有网友爆料，闲鱼正在邀请韩寒做玩家业务的CEO。闲鱼公关部对此回应称：“确有此事，不过还在接触中。”去年年初，闲鱼在战略发布会上宣布“玩家战略”，声称将投入巨大资源支持玩家的发展，未来三年培育10万名玩家，为他们定制鱼塘，设计玩家号、玩家鱼塘产品和推广方案
+                </article>
             </div>
+            <div class="comment-wrapper">
+                <h3 class="title">文章评论</h3>
 
-            <ul class="nav">
-                <li class="active"><a href="/">创业资讯</a></li>
-                <li><a href="#">创业课堂</a></li>
-                <li><a href="#">付费资讯</a></li>
-                <li><a href="#">搜索</a></li>
-            </ul>
+                <textarea name="comment" class="comment-textarea nologined-textarea" placeholder="请立即登录参与评论..."></textarea>
 
-            <div class="auth-box">
-                <a href="#">登录</a> /
-                <a href="#">注册</a>
-            </div>
+                <div class="submit-btn-group">
+                    <button class="submit-btn">立即评论</button>
+                </div>
 
-        </div>
-    </header>
-
-    <!--内容部分-->
-    <div class="main">
-        <div class="wrapper">
-            <div class="main-content-wrapper">
-                <div class="news-wrapper">
-                    <h1 class="title">
-                        【早报】：OYO被曝房源造假；理想汽车秘密申请美国IPO；滴滴出行暂停新司机注册审核7天
-                    </h1>
-                    <div class="news-info">
-                        <div class="info-group">
-                            <span class="author">福禄娃</span>
-                            <span class="pub-time">12月11号</span>
-                            <span class="category">热点</span>
+                <ul class="comment-list">
+                    <li>
+                        <div class="comment-info">
+                            <img src="https://static-image.xfz.cn/1564640994_620.jpg" alt="" class="avatar">
+                            <span class="author">小知了</span>
+                            <span class="pub-time">1小时前</span>
                         </div>
-                        <div class="share-group">
-                            <span>分享至：</span>
-                            <a class="weixin share-item"></a>
-                            <a href="#" class="weibo share-item"></a>
+                        <p class="comment-content">这是第一条评论</p>
+                    </li>
+                    <li>
+                        <div class="comment-info">
+                            <img src="https://static-image.xfz.cn/1564640994_620.jpg" alt="" class="avatar">
+                            <span class="author">小知了</span>
+                            <span class="pub-time">1小时前</span>
                         </div>
-                    </div>
-                    <article class="article">
-                        <img src="https://static-image.xfz.cn/1578101200_843.png" alt="">
-                        小桔车服与小鹏汽车合作，面向个人用户提供长租服务
-                        小桔车服与小鹏汽车达成合作，双方将协同彼此在产品、市场、品牌、数据等方面的优势，在网约车、社会车辆长租、充电及维护保养等汽车产业链业务开展全面合作。通过合作，双方将共同探索小鹏汽车通过小桔租车平台，向个人用户提供长租服务这种新型用车方式。
+                        <p class="comment-content">这是第一条评论</p>
+                    </li>
 
-                        携程计划回港二次上市，已接触多家中资及外资投行
-                        携程计划回港二次上市，并于最近陆续接触了多家中资及外资投行。但是截至发稿，携程暂未正式挑选投行。在阿里巴巴当时的上市仪式上，港交所行政总裁李小加表示，既然阿里巴巴都能够回港二次上市，没有理由不相信其他中概股公司都会陆续回港。携程为在线旅游服务公司，于2003年12月在美国纳斯达克上市。连续1月2日，携程收盘价为36.97美元，市值为217.54亿美元。
-
-                        工信部回应4G网速变慢：近期全国4G网速整体保持稳定
-                        针对网友有关“4G网速变慢”的提问，工信部3日通过中国政府网回应称，总体来看，近期全国4G网速整体保持稳定，但可能存在个别区域、某些时段下降的情况。主要原因是4G用户流量增长和网络支撑能力提升还不完全匹配。后续，将进一步加强对基础电信企业监管和指导，做好网络建设和优化，保障服务质量。
-
-                        闲鱼回应“邀韩寒出任玩家CEO”：确有此事
-                        近日，有网友爆料，闲鱼正在邀请韩寒做玩家业务的CEO。闲鱼公关部对此回应称：“确有此事，不过还在接触中。”去年年初，闲鱼在战略发布会上宣布“玩家战略”，声称将投入巨大资源支持玩家的发展，未来三年培育10万名玩家，为他们定制鱼塘，设计玩家号、玩家鱼塘产品和推广方案
-                    </article>
-                </div>
-                <div class="comment-wrapper">
-                    <h3 class="title">文章评论</h3>
-
-                    <textarea name="comment" class="comment-textarea nologined-textarea" placeholder="请立即登录参与评论..."></textarea>
-
-                    <div class="submit-btn-group">
-                        <button class="submit-btn">立即评论</button>
-                    </div>
-
-                    <ul class="comment-list">
-                        <li>
-                            <div class="comment-info">
-                                <img src="https://static-image.xfz.cn/1564640994_620.jpg" alt="" class="avatar">
-                                <span class="author">小知了</span>
-                                <span class="pub-time">1小时前</span>
-                            </div>
-                            <p class="comment-content">这是第一条评论</p>
-                        </li>
-                        <li>
-                            <div class="comment-info">
-                                <img src="https://static-image.xfz.cn/1564640994_620.jpg" alt="" class="avatar">
-                                <span class="author">小知了</span>
-                                <span class="pub-time">1小时前</span>
-                            </div>
-                            <p class="comment-content">这是第一条评论</p>
-                        </li>
-
-                        <li>
-                            <div class="comment-info">
-                                <img src="https://static-image.xfz.cn/1564640994_620.jpg" alt="" class="avatar">
-                                <span class="author">小知了</span>
-                                <span class="pub-time">1小时前</span>
-                            </div>
-                            <p class="comment-content">这是第一条评论</p>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-            <div class="sidebar-wrapper">
-                <div class="title-group">
-                    <span class="title">在线课堂</span>
-                    <a href="#" class="more">更多</a>
-                </div>
-                <div class="advertise-group">
-                    <a href="#">
-                        <img src="https://static-fancube.xfz.cn/1568625440728/740x400.jpg-website.active.list" alt="">
-                    </a>
-                </div>
-
-                <div class="platform-group">
-                    <div class="title-group">
-                        <span class="title">关注小饭桌</span>
-                    </div>
-                    <div class="focus-group">
-                        <ul class="left-group">
-                            <li class="zhihu">
-                                <a href="#" target="_blank">小饭桌创业课堂</a>
-                            </li>
-
-                            <li class="weibo" >
-                                <a href="#" target="_blank">小饭桌创业课堂</a>
-                            </li>
-
-                            <li class="toutiao">
-                                <a href="#" target="_blank">小饭桌</a>
-                            </li>
-
-                        </ul>
-                        <div class="right-group">
-                            <p class="desc">
-                                扫码关注小饭桌公众号
-                            </p>
+                    <li>
+                        <div class="comment-info">
+                            <img src="https://static-image.xfz.cn/1564640994_620.jpg" alt="" class="avatar">
+                            <span class="author">小知了</span>
+                            <span class="pub-time">1小时前</span>
                         </div>
-                    </div>
+                        <p class="comment-content">这是第一条评论</p>
+                    </li>
 
-                </div>
+                </ul>
 
-                <div class="hot-news-group">
-                    <div class="title-group">
-                        <span class="title">热门推荐</span>
-                    </div>
-                    <ul class="hot-list-group">
-                        <li><div class="left-group">
-                            <p class="title">
-                                <a href="#">早报：OYO被曝房源造假；理想汽车秘密申请美国IPO...</a>
-                            </p>
-
-                            <p class="more">
-                                <span class="category">深度报道</span>
-                                <span class="pub-time">1小时前</span>
-
-                            </p>
-                        </div>
-                            <div class="right-group">
-                                <img src="https://static-image.xfz.cn/1578101299_163.jpg-website.news.list" alt="">
-                            </div>
-                        </li>
-
-                        <li><div class="left-group">
-                            <p class="title">
-                                <a href="#">打造开店人“小红书”， 店鹿获450万天使融资</a>
-                            </p>
-
-                            <p class="more">
-                                <span class="category">热点</span>
-                                <span class="pub-time">1小时前</span>
-
-                            </p>
-                        </div>
-                            <div class="right-group">
-                                <img src="https://static-image.xfz.cn/1577945078_284.png-website.news.list" alt="">
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
             </div>
         </div>
+        {% include 'common/sidebar.html' %}
     </div>
+</div>
+{% endblock %}
 
-    <footer class="footer">
-        <div class="top-group">
-            <div class="top-inner-group">
-                <div class="logo-box"></div>
-                <div class="detail-group">
-                    <div class="line1">
-                        <ul class="links">
-                            <li><a href="#">小饭桌</a></li>
-                            <li><a href="#">创业课堂</a></li>
-                            <li><a href="#">寻求报道</a></li>
-                            <li><a href="#">创业礼包</a></li>
-                        </ul>
-                        <div class="about-us">
-                            <span class="title">关于我们：</span>
-                            <ul class="social-group">
-                                <li class="weixin">
-                                    <div class="wx-qrcode"></div>
-                                    <span class="text">xfz008</span>
-                                </li>
-                                <li class="weibo">
-                                    <a class="text" href="#">小饭桌创业课堂</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="line2">
-                        <p class="address">北京市朝阳区东三环北路38号院泰康金融大厦</p>
-                        <p class="contact">电话：17765602533</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-group">
-            @2019北京木子投资顾问有限公司
-        </div>
-    </footer>
-</body>
-</html>
