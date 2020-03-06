@@ -50,7 +50,7 @@ class PubCourse(View):
 @require_GET
 @permission_required(perm="course.add_coursecategory", login_url='/')
 def course_category(request):
-    categories = CourseCategory.objects.values()
+    categories = CourseCategory.objects.all()
     # 计算课程相关总类的数量
     # 默认根据id排序
     # category_sum = CourseCategory.objects.annotate(category_num=Count("course__category")).values('category_num')
@@ -109,7 +109,7 @@ def edit_course_category(request):
         except:
             return restful.params_error(message="该分类不存在")
     else:
-        return restful.params_error(message=form.get_error())
+        return restful.params_error(message=form.get_errors())
 
 
 # 删除分类
@@ -117,6 +117,7 @@ def edit_course_category(request):
 @permission_required(perm="course.delete_coursecategory", login_url='/')
 def delete_course_category(request):
     pk = request.POST.get("pk")
+    print(pk)
     try:
         CourseCategory.objects.filter(pk=pk).delete()
         return restful.ok()

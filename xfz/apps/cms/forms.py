@@ -56,7 +56,7 @@ class PubCourseForm(forms.ModelForm, FormMixin):
         exclude = ["category", 'teacher']
 
 
-class EditCourseCategoryForm(forms.Form):
+class EditCourseCategoryForm(forms.Form, FormMixin):
     pk = forms.IntegerField(error_messages={"required": "必须传入分类的id"})
     name = forms.CharField(max_length=100)
 
