@@ -115,7 +115,7 @@ def sms_captcha(request):
 
 # 测试cacahe
 def cache_test(request):
-    cache.set('username', 'zhiliao', 60)
+    cache.set('username', 'mingmin', 60*60)
     result = cache.get('username')
     print(result)
     return HttpResponse('success')

@@ -1,6 +1,9 @@
 {% extends 'base/front_base.html' %}
+{% load news_filters %}
 
-{% block title %}小饭桌{% endblock %}
+{% block title %}
+搜索
+{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/search/search.min.css' %}">
@@ -12,33 +15,43 @@
         <div class="main-content-wrapper">
             <div class="search-group">
                 <form action="" method="get">
-                    <input type="text" name="q" class="search-input" placeholder="请输入关键字">
-                    <input type="submit" class="search-btn" value="搜索">
+                    <input type="text" name="q" class="search-input" placeholder="请输入关键字" value="{{ query }}">
+                    <input type="submit" class="search-btn"  value="搜索">
                 </form>
             </div>
             <div class="recommend-group">
-                <p class="recommend-title">热门推荐</p>
+                {% if num %}
+                <p class="recommend-title">搜索结果({{ num }}条记录)</p>
+                {% else %}
+                <p class="recommend-title">搜索结果</p>
+                {% endif %}
+
                 <ul class="recommend-list">
+                    {% for result in page.object_list %}
+                    {% with result.object as news %}
                     <li>
+
                         <div class="thumbnail-group">
-                            <a href="#">
-                                <img src="https://static-image.xfz.cn/1578101299_163.jpg-website.news.list" alt="">
+                            <a href="{% url 'news:news_detail' news_id=news.pk %}">
+                                <img src="{{ news.thumbnail }}" alt="">
                             </a>
                         </div>
                         <div class="news-group">
                             <p class="title">
-                                <a href="#"> 早报：OYO被曝房源造假；理想汽车秘密申请美国IPO；滴滴出行暂停新司机注册审核7天</a>
+                                <a href="{% url 'news:news_detail' news_id=news.pk %}">{{ news.title }}</a>
                             </p>
                             <p class="desc">
-                                滴滴顺风车1月6日上线杭州、上海等8个城市试运营
+                                {{ news.desc }}
                             </p>
                             <p class="more">
-                                <span class="category">深度报道</span>
-                                <span class="pub-time">1小时前</span>
-                                <span class="author">知了课堂</span>
+                                <span class="category">{{ news.category.name }}</span>
+                                <span class="pub-time">{{ news.pub_time|time_since }}</span>
+                                <span class="author">{{ news.author.username }}</span>
                             </p>
                         </div>
                     </li>
+                    {% endwith %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>

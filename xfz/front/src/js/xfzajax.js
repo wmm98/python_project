@@ -2,6 +2,8 @@
  * Created by hynev on 2018/5/15.
  */
 
+
+
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -39,19 +41,17 @@ var xfzajax = {
                 var messageObject = result['message'];
                 if(typeof messageObject == 'string' || messageObject.constructor == String){
                     window.messageBox.showError(messageObject);
-                    // console.log(messageObject);
                 }else{
                     // {"password":['密码最大长度不能超过20为！','xxx'],"telephone":['xx','x']}
                     for(var key in messageObject){
                         var messages = messageObject[key];
                         var message = messages[0];
                         window.messageBox.showError(message);
-                        // console.log(message);
                     }
                 }
-                // if(success){
-                //     success(result);
-                // }
+                if(success){
+                    success(result);
+                }
             }
         };
         args['fail'] = function (error) {

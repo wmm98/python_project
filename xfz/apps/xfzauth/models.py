@@ -26,6 +26,7 @@ class UserManager(BaseUserManager):
     # 创建超级用户
     def create_superuser(self, telephone, username, password, **kwargs):
         kwargs['is_superuser'] = True
+        kwargs['is_staff'] = True
         return self._create_user(telephone, username, password, **kwargs)
 
 

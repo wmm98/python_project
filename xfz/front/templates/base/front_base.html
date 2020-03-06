@@ -25,9 +25,9 @@
 
         <ul class="nav">
             <li class="active"><a href="/">创业资讯</a></li>
-            <li><a href="#">创业课堂</a></li>
-            <li><a href="#">付费资讯</a></li>
-            <li><a href="#">搜索</a></li>
+            <li><a href="{% url 'course:course_index' %}">创业课堂</a></li>
+            <li><a href="{% url 'payinfo:index' %}">付费资讯</a></li>
+            <li><a href="/search/">搜索</a></li>
         </ul>
 
         <div class="auth-box">
@@ -36,8 +36,10 @@
                 <a href="#" class="authenticated-box">{{ user.username }}</a>
                 <div class="user-more-box">
                     <i class="triangle"></i>
-                    <a href="#">管理系统</a>
-                    <a href="{% url 'xfzauth:logout' %}">退出登录</a>
+                    {% if user.is_staff %}
+                        <a href="{% url 'cms:index' %}">管理系统</a>
+                    {% endif %}
+                        <a href="{% url 'xfzauth:logout' %}">退出登录</a>
                 </div>
             {% else %}
                 <a href="#" class="signin-btn">登录</a> /
@@ -130,15 +132,15 @@
                             <div class="short-input-group">
                                 <input type="text" class="form-control" name="img_captcha" placeholder="图形验证码">
                             </div>
-                            <div class="input-group-addon">
-                                <img src="" alt="">
+                            <div class="input-group-addon" >
+                                <img src="{% url 'xfzauth:img_captcha' %}" alt="" class="img-captcha" style="cursor:pointer">
                             </div>
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="password1" placeholder="密码">
+                            <input type="password" class="form-control" name="password1" placeholder="密码">
                         </div>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="password2" placeholder="确认密码">
+                            <input type="password" class="form-control" name="password2" placeholder="确认密码">
                         </div>
                         <div class="input-group">
                             <div class="short-input-group">
